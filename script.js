@@ -44,18 +44,18 @@ function showData(data) {
     speed,
   } = statValues;
 
-  nameP.innerText = name;
-  idP.innerText = id;
-  weightP.innerText = weight;
-  heightP.innerText = height;
-  hpP.innerText = hp;
-  attackP.innerText = attack;
-  defenseP.innerText = defense;
-  specialAttackP.innerText = sAtt;
-  specialdefenseP.innerText = sDef;
-  speedP.innerText = speed;
+  nameP.innerText = `Name: ${name[0].toUpperCase() + name.slice(1)}`;
+  idP.innerText = `Id: ${id}`;
+  weightP.innerText = `Weight: ${weight}`;
+  heightP.innerText = `Height: ${height}`;
+  hpP.innerText = `HP: ${hp}`;
+  attackP.innerText = `Attack: ${attack}`;
+  defenseP.innerText = `Defense: ${defense}`;
+  specialAttackP.innerText = `Special Attack: ${sAtt}`;
+  specialdefenseP.innerText = `Special Defense: ${sDef}`;
+  speedP.innerText = `Speed ${speed}`;
 
-  typesP.textContent = "";
+  typesP.textContent = "Type: ";
   for (const currType of data.types) {
     typesP.innerHTML += `<span> ${currType.type.name.toUpperCase() + " "} </span>`;
   }
