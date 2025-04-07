@@ -1,0 +1,145 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+body > * {
+  padding: 0 10%;
+}
+
+input, button {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#sprite {
+  margin-top: 1rem;
+  width: 250px;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+#types span {
+  background-color: #ef5350;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  margin: 0 0.2rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+#stats-table {
+  width: 35em;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#stats-table th,
+#stats-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+#stats-table th {
+  background-color: #2196F3;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#stats-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.info-card {
+  max-width: 400px;
+  margin: 0 2rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+}
+
+.info-card p {
+  margin: 0.5rem 0;
+  font-weight: 500;
+  color: #333;
+}
+
+#types span {
+  display: inline-block;
+  background-color: #ff9800;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  margin: 0.2rem 0.2rem 0 0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+table td {
+  text-align: center;
+}
+
+table#stats-table {
+  display: none;
+}
+
+
+div#pokemon-info {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div#wrapper {
+  display: flex;
+  margin-top: 50px;
+  gap: 20px;
+  justify-content: center;
+}
+
+img.type {
+  height: 100px;
+}
+
+div.header{
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+input#search-input{
+  width: 50%;
+}
+
+
+a > img, a{
+  height: 100%;
+}
+
+div.containinfo{
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

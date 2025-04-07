@@ -5,7 +5,6 @@ const nameP = document.getElementById("pokemon-name");
 const idP = document.getElementById("pokemon-id");
 const weightP = document.getElementById("weight");
 const heightP = document.getElementById("height");
-const typesP = document.getElementById("types");
 const hpP = document.getElementById("hp");
 const attackP = document.getElementById("attack");
 const defenseP = document.getElementById("defense");
@@ -13,6 +12,7 @@ const specialAttackP = document.getElementById("special-attack");
 const specialdefenseP = document.getElementById("special-defense");
 const speedP = document.getElementById("speed");
 const imgElem = document.getElementById("sprite");
+const typeWrap = document.getElementById("typeWrap");
 
 button.addEventListener("click", () => {
   const search = input.value.toLowerCase();
@@ -27,6 +27,19 @@ function fetchPokemonData(search) {
       alert("Pokémon not found");
       return console.error(error);
     });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("search-input").value = "Bulbasaur";
+  fetchPokemonData("bulbasaur");
+  document.getElementById("pokemon-info").style.display = "flex";
+  document.getElementById("stats-table").style.display = "table";
+});
+
+function handleTypeImages(typeImages) {
+  if (typeImages) {
+    Array.from(typeImages).forEach((elem) => elem.remove());
+  }
 }
 
 function showData(data) {
@@ -48,17 +61,24 @@ function showData(data) {
   idP.innerText = `Id: ${id}`;
   weightP.innerText = `Weight: ${weight}`;
   heightP.innerText = `Height: ${height}`;
-  hpP.innerText = `HP: ${hp}`;
-  attackP.innerText = `Attack: ${attack}`;
-  defenseP.innerText = `Defense: ${defense}`;
-  specialAttackP.innerText = `Special Attack: ${sAtt}`;
-  specialdefenseP.innerText = `Special Defense: ${sDef}`;
-  speedP.innerText = `Speed ${speed}`;
+  hpP.innerText = `${hp}`;
+  attackP.innerText = `${attack}`;
+  defenseP.innerText = `${defense}`;
+  specialAttackP.innerText = `${sAtt}`;
+  specialdefenseP.innerText = `${sDef}`;
+  speedP.innerText = `${speed}`;
 
-  typesP.textContent = "Type: ";
+  const typeImages = typeWrap.children;
+  handleTypeImages(typeWrap.children);
   for (const currType of data.types) {
-    typesP.innerHTML += `<span> ${currType.type.name.toUpperCase() + " "} </span>`;
+    const str = `img/types/${currType.type.name}.png`;
+    const img = Object.assign(document.createElement("img"), {
+      src: str,
+      className: "type",
+      alt: currType.type.name,
+    });
+    typeWrap.appendChild(img);
   }
-
+  console.log(typeImages);
   imgElem.src = data.sprites.front_default;
 }
